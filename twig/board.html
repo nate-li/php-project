@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>PHP Project: Chessboard</title>
+    <style>
+        div{
+            width: 30px;
+            height: 30px;
+        }
+        .black{
+            background-color: black;
+        }
+        .white{
+            border: 1px solid black;
+        }
+        table{
+            width: 270px;
+            height: 270px;
+            border: 2px solid black;
+            padding: 4px;
+        }
+    </style>
 </head>
 <body>
-    asdfasdf
+    <br />
+    <table>
+        {% for row in color_array %}
+        <tr>
+            {% for cell in row %}
+
+                {% if cell == 1 %}
+                    <td class="black">
+                {% else %}
+                    <td class="white">
+                {% endif %}
+                <div></div>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
