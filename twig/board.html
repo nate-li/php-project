@@ -16,7 +16,9 @@
         }
         table{
             width: 270px;
+            height: 270px;
             border: 2px solid black;
+            padding: 4px;
         }
     </style>
 </head>
@@ -26,12 +28,13 @@
         {% for row in color_array %}
         <tr>
             {% for cell in row %}
-            <td>
+
                 {% if cell == 1 %}
-                <div class="black"></div>
+                    <td class="black">
                 {% else %}
-                    <div class="white"></div>
+                    <td class="white">
                 {% endif %}
+                <div></div>
             </td>
             {% endfor %}
         </tr>
