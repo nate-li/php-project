@@ -8,10 +8,14 @@
 
 require_once '/Users/nal64753/desktop/workspace/php-project/vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('/Users/nal64753/desktop/workspace/php-project/twig');
-$twig = new Twig_Environment($loader);
-$html = $twig->render('board.html', array(
-    'color_array' => $color_array
-));
+$twig = new Twig_Environment($loader, array('debug' => true));
+$twig->addExtension(new Twig_Extension_Debug());
+
+
+
+$color_array = array();
+
+
 
 for($i = 0; $i < 8; $i++){
     for($j = 0; $j < 8; $j++){
@@ -23,11 +27,16 @@ for($i = 0; $i < 8; $i++){
         else {
             $color_array[$i][$j] = 0;
         }
+        echo $color_array[$i][$j] . " ";
     }
+    echo "<br />";
 }
 
-$color_array = array();
+echo "hey world" . "<br />";
 
+$html = $twig->render('board.html', array(
+    'color_array' => $color_array
+));
 echo $html;
 
 ?>
