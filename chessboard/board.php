@@ -13,4 +13,21 @@ $html = $twig->render('board.html', array(
     'color_array' => $color_array
 ));
 
+for($i = 0; $i < 8; $i++){
+    for($j = 0; $j < 8; $j++){
+        //assigns val of '1' to denote shaded space
+        if(($i % 2 === 0 && $j % 2 === 0) || ($i % 2 === 1 && $j % 2 === 1)){
+            $color_array[$i][$j] = 1;
+        }
+        //otherwise assigns '0; for empty space
+        else {
+            $color_array[$i][$j] = 0;
+        }
+    }
+}
+
+$color_array = array();
+
 echo $html;
+
+?>
