@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>PHP Project: Chessboard</title>
-
     <style>
         div{
             width: 30px;
             height: 30px;
         }
+        .black{
+            background-color: black;
+        }
+        .white{
+            border: 1px solid black;
+        }
+        table{
+            width: 270px;
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
-    asdlfkjasdf
     <br />
-
-        {{key}}
-
-
-
-    <table style ="border: 2px solid black">
+    <table>
         {% for row in color_array %}
         <tr>
             {% for cell in row %}
             <td>
                 {% if cell == 1 %}
-                    <div class="black"></div>
+                <div class="black"></div>
                 {% else %}
                     <div class="white"></div>
                 {% endif %}
@@ -34,7 +37,5 @@
         </tr>
         {% endfor %}
     </table>
-
-
 </body>
 </html>
